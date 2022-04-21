@@ -17,10 +17,12 @@ int main()
     FILE *file_out;
 
     pkw myCar(150000, 75.4f, 12.2f, 80.0f);
-    fopen_s(&file_in, "myCar.bin", "w");
-
-
-    fclose(file_in);
+    file_in = fopen("myCar.bin", "w");
+    if (file_in != NULL){
+        //rewind(file_in);
+        fread(&myCar, sizeof(class pkw), 1, file_in);
+        fclose(file_in);
+    }
 
 
     while (true){
@@ -88,7 +90,8 @@ int main()
         }
 
         //speichern des objekts
-        fopen_s(&file_out, "myCar.bin", "w");
+        file_out = fopen("myCar.bin", "w");
+        rewind(file_out);
         fwrite(&myCar, sizeof(class pkw), 1, file_out);
         fclose(file_out);
 
