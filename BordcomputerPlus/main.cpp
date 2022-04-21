@@ -62,13 +62,19 @@ int main()
 
         case '3':
             system("cls");
-            printf("==== Ihre Daten ====\nKilometerstand: %8d km\nTankinhalt:       %6.2f l\nReichweite:         %4d km\nVerbrauch:         %5.2f l/100km\n", myCar.get_kmStand(), myCar.get_tankInhalt(), myCar.get_reichweite(), myCar.get_verbrauch());
+            printf("==== Ihre Daten ====");
+            printf("\nKilometerstand: %8d km", myCar.get_kmStand());
+            printf("\nTankinhalt:       %6.2f l", myCar.get_tankInhalt());
+            printf("\nReichweite:         %4d km", myCar.get_reichweite());
+            printf("\nVerbrauch:         %5.2f l/100km", myCar.get_verbrauch());
+            printf("\nTankvolumen:       %5.2f l", myCar.get_tankInhalt());
             printf("\nDruecken Sie eine beliebige Taste um fortzufahren.\n");
             getch();
 
             break;
 
         default:
+            system("cls");
             printf("%c ist nicht definiert. Bitte eine andere Option auswaehlen. Druecken Sie eine beliebige Taste um fortzufahren.\n", ch);
             getch();
             break;
