@@ -13,8 +13,15 @@ int main()
     short ch;
     bool exit_loop;
     float tanken_temp;
+    FILE *file_in;
+    FILE *file_out;
 
     pkw myCar(150000, 75.4f, 12.2f, 80.0f);
+    fopen_s(&file_in, "myCar.bin", "w");
+
+
+    fclose(file_in);
+
 
     while (true){
         system("cls");
@@ -51,7 +58,7 @@ int main()
         case '2':
             system("cls");
             printf("==== Tanken ====\n");
-            printf("Wieviele Liter wollen sie tanken? ");
+            printf("Wieviele Liter wollen sie tanken? (Freies Tankvolumen: %6.2f l) ", myCar.get_tankVolumen() - myCar.get_tankInhalt());
             scanf("%f", &tanken_temp);
             if (myCar.tanken(tanken_temp) == -1){
                 printf("Soviel koennen Sie nicht tanken! Druecken Sie eine beliebige Taste um fortzufahren.");
@@ -79,6 +86,11 @@ int main()
             getch();
             break;
         }
+
+        //speichern des objekts
+        fopen_s(&file_out, "myCar.bin", "w");
+        fwrite(&myCar, sizeof(class pkw), 1, file_out);
+        fclose(file_out);
 
         if (exit_loop){
             printf("Servus!");
