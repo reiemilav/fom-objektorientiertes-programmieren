@@ -10,7 +10,7 @@
 
 int main()
 {
-    short answer;
+    short ch;
     bool exit_loop;
     float tanken_temp;
 
@@ -18,12 +18,20 @@ int main()
 
     while (true){
         system("cls");
-        printf("Bordcomputer - Menu\n0 - ENDE\n1 - Fahren\n2 - Tanken\n3 - Daten anzeigen\n");
-        answer = getch();
+        printf("\n Bordcomputer");
+        printf("\n =============");
+        printf("\n 1 - Fahren");
+        printf("\n 2 - Tanken");
+        printf("\n 3 - Statistik");
+        printf("\n 0 - Ende");
+        printf("\n =============");
+        printf("\n Ihre Wahl? ");
+
+        ch = getch();
 
 
 
-        switch (answer)
+        switch (ch)
         {
         case '0':
             exit_loop = true;
@@ -31,9 +39,9 @@ int main()
         
         case '1':
             system("cls");
-            printf("Fahren:\n");
+            printf("==== Fahren ====\n");
             printf("Wieviele km wollen sie fahren? (Restreichweite: %d km) ", myCar.get_reichweite());
-            if (myCar.fahren(getshort(5)) != 0){
+            if (myCar.fahren(getshort(5)) == -1){
                 printf("\nSoweit koennen Sie nicht fahren! Druecken Sie eine beliebige Taste um fortzufahren.");
                 getch();
                 break;
@@ -42,10 +50,10 @@ int main()
         
         case '2':
             system("cls");
-            printf("Tanken\n");
+            printf("==== Tanken ====\n");
             printf("Wieviele Liter wollen sie tanken? ");
             scanf("%f", &tanken_temp);
-            if (myCar.tanken(tanken_temp) != 0){
+            if (myCar.tanken(tanken_temp) == -1){
                 printf("Soviel koennen Sie nicht tanken! Druecken Sie eine beliebige Taste um fortzufahren.");
                 getch();
                 break;
@@ -54,19 +62,20 @@ int main()
 
         case '3':
             system("cls");
-            printf("Ihre Daten:\nKilometerstand: %8d km\nTankinhalt:       %6.2f l\nReichweite:         %4d km\nVerbrauch:         %5.2f l/100km\n", myCar.get_kmStand(), myCar.get_tankInhalt(), myCar.get_reichweite(), myCar.get_verbrauch());
+            printf("==== Ihre Daten ====\nKilometerstand: %8d km\nTankinhalt:       %6.2f l\nReichweite:         %4d km\nVerbrauch:         %5.2f l/100km\n", myCar.get_kmStand(), myCar.get_tankInhalt(), myCar.get_reichweite(), myCar.get_verbrauch());
             printf("\nDruecken Sie eine beliebige Taste um fortzufahren.\n");
             getch();
 
             break;
 
         default:
-            printf("%c ist nicht definiert. Bitte eine andere Option auswaehlen. Druecken Sie eine beliebige Taste um fortzufahren.\n", answer);
+            printf("%c ist nicht definiert. Bitte eine andere Option auswaehlen. Druecken Sie eine beliebige Taste um fortzufahren.\n", ch);
             getch();
             break;
         }
 
         if (exit_loop){
+            printf("Servus!");
             break;
         }
     }
