@@ -1,8 +1,10 @@
+#ifndef USER_H
+#define USER_H
+
 class konto
 {
-private:
+protected:
     float mKontostand;
-    
 
 public:
     konto(float);
@@ -11,3 +13,5 @@ public:
     float getKontostand();
     int einzahlung(float);
 };
+
+#endif // USER_H

@@ -1,12 +1,12 @@
 #include "konto.h"
 
-class tagesgeldkonto : konto 
+class tagesgeldkonto : public konto 
 {
 private:
     float mHabenzins;
 
 public:
-    tagesgeldkonto();
+    tagesgeldkonto(float, float);
     ~tagesgeldkonto();
 
     float getHabenzins();

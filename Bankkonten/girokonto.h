@@ -1,13 +1,13 @@
 #include "konto.h"
 
-class girokonto : konto
+class girokonto : public konto
 {
 private:
     float mHabenzins;
     float mSollzins;
 
 public:
-    girokonto(/* args */);
+    girokonto(float, float, float);
     ~girokonto();
 
     float getHabenzins();
