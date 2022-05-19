@@ -1,7 +1,9 @@
-#include "girokonto.cpp"
-#include "guthabenkonto.cpp"
 #include "konto.cpp"
+#include "guthabenkonto.cpp"
 #include "darlehenskonto.cpp"
+#include "girokonto.cpp"
+#include "sparkonto.cpp"
+#include "geldmarktkonto.h"
 
 #include "getfloat.h"
 #include "getshort.h"
@@ -14,14 +16,23 @@
 
 using namespace std;
 
+int menu();
 
 int main()
 {
-    char ch;
+    girokonto MeinGk(7463.47f, 0.50f, 12.50f, 3000.00f);
+    sparkonto MeinSk();
+    geldmarktkonto MeinGmk();
 
-    girokonto MeinGiro(7463.47f, 0.50f, 12.50f, 3000.00f);
 
+    menu();
 
+    getch();
+
+}
+
+int menu()
+{
     system("cls");
     cout << endl;
     cout << " Kontenverwaltung" << endl;
@@ -36,10 +47,7 @@ int main()
     cout << " ESC - ENDE" << endl;
     cout << endl;
     cout << " Ihre Wahl? ";
+
     
-    ch = getch();
-
-    cout << ch;
-
-
+    
 }
