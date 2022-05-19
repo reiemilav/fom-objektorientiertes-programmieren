@@ -1,6 +1,6 @@
 #include "tagesgeldkonto.h"
 
-tagesgeldkonto::tagesgeldkonto(float initKontostand, float initHabenzins):konto(initHabenzins)
+tagesgeldkonto::tagesgeldkonto(float initKontostand, float initHabenzins):konto(initKontostand)
 {
     mHabenzins = initHabenzins;
 }

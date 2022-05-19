@@ -1,6 +1,6 @@
 #include "konto.h"
 
-class sparkonto : konto
+class sparkonto : public konto
 {
 private:
     float mHabenzins;

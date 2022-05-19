@@ -34,6 +34,7 @@ int girokonto::setSollzins(float tempSollzins)
 
 int girokonto::auszahlung(float betrag)
 {
-    mKontostand =- betrag;
+    mKontostand -= betrag;
     return 0;
+
 }
