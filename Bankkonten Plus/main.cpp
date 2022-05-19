@@ -38,12 +38,12 @@ int menu()
     cout << " Kontenverwaltung" << endl;
     cout << " ================" << endl;
     cout << endl;
-    cout << " 1 - Kontenuebersicht" << endl;
-    cout << " 2 - Einzahlung auf das Girokonto" << endl;
-    cout << " 3 - Auszahlung vom Girokonto" << endl;
-    cout << " 4 - Umbuchung auf das Sparkonto" << endl;
-    cout << " 5 - Umbuchung auf das Tagesgeldkonto" << endl;
-    //cout << " 6 - ..." << endl;
+    cout << " F1 - Kontenuebersicht" << endl;
+    cout << " F2 - Einzahlung auf das Girokonto" << endl;
+    cout << " F3 - Auszahlung vom Girokonto" << endl;
+    cout << " F4 - Umbuchung auf das Sparkonto" << endl;
+    cout << " F5 - Umbuchung auf das Tagesgeldkonto" << endl;
+    //cout << " F6 - ..." << endl;
     cout << " ESC - ENDE" << endl;
     cout << endl;
     cout << " Ihre Wahl? ";
