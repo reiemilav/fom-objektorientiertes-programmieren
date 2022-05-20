@@ -10,9 +10,9 @@ konto::konto(float initKontostand)
     kontostand = initKontostand;
 }
 
-// konto::~konto()
-// {
-// }
+konto::~konto()
+{
+}
 
 float konto::getKontostand()
 {

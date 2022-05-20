@@ -8,7 +8,7 @@ protected:
 
 public:
     konto(float);
-    // ~konto();
+    ~konto();
 
     float getKontostand();
     int einzahlung(float);

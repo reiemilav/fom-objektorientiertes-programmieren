@@ -9,9 +9,11 @@ dahrlehenskonto::dahrlehenskonto(float initKontostand, float initSollzins, short
 }
 
 float dahrlehenskonto::getSollzins(){
+    return sollzins;
 }
 
 short dahrlehenskonto::getLaufzeit(){
+    
 
 }
 float dahrlehenskonto::getSondertilgung(){
