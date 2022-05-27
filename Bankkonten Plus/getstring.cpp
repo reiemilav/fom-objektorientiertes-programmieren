@@ -2,6 +2,7 @@
 #include<conio.h>
 
 #define vcRETURN 0x0d
+#define vcBACK 0x08
 
 void getstring(char *);
 
@@ -29,15 +30,27 @@ void getstring(char *pt)
     pt1 = pt;
 
     /* Eingabepruefung */
-    while ((ch=_getch()) != vcRETURN)
+    while (ch=_getch())
     {
-        if (ch >= 'a' && ch <= 'z')
+        if (ch == vcRETURN)
+        {
+            *pt = 0;
+            break;
+        }
+        
+        if (ch == vcBACK and pt != pt1)
+        {
+            _putch(vcBACK);
+            _putch(' ');
+            _putch(vcBACK);
+            pt--;
+        }
+        
+        if (ch >= 32 && ch <= 126)
         {
             *pt = ch;
             _putch(*pt);
             pt++;
         }
-        
     }
-    
 }
