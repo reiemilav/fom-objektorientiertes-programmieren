@@ -3,24 +3,9 @@
 
 #define vcRETURN 0x0d
 #define vcBACK 0x08
+#define STRLEN 8
 
-void getstring(char *);
-
-int main()
-{
-    char ort[20];
-
-    printf("\n Ort: ");
-    getstring(ort);
-
-    printf("\n Ausgabe: %s", ort);
-
-    _getch();
-
-    return 0;
-}
-
-void getstring(char *pt)
+void getstring(char *pt, int strlen)
 {
     /* Variablendeklaration */
     char ch;
@@ -38,7 +23,7 @@ void getstring(char *pt)
             break;
         }
         
-        if (ch == vcBACK and pt != pt1)
+        if (ch == vcBACK && pt > pt1)
         {
             _putch(vcBACK);
             _putch(' ');
@@ -46,11 +31,12 @@ void getstring(char *pt)
             pt--;
         }
         
-        if (ch >= 32 && ch <= 126)
+        if (ch >= 32 && ch <= 126 && pt - pt1 < strlen)
         {
             *pt = ch;
             _putch(*pt);
             pt++;
         }
     }
+    printf("\nLength: %d", pt - pt1);
 }
