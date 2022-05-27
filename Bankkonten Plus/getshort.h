@@ -1,3 +1,6 @@
+#ifndef GETSTRING
+#define GETSTRING
+
 #include<conio.h>
 
 #define vcRETURN 0x0d
@@ -39,3 +42,7 @@ short getshort(short n) {
 
     return zahl;
 }
+
+
+
+#endif
